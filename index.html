@@ -9,7 +9,10 @@
   </style>
 </head>
 <body>
-  <video id="videoPlayer" autoplay muted playsinline></video>
+  <video id="videoPlayer" autoplay muted playsinline controls>
+    <source src="https://dl.dropboxusercontent.com/scl/fi/q01fly7vefak13uarypty/InStoreScreens-Fashion-Jan2024.mp4?rlkey=s9g9lm2n5v56azvl2fzjmjlvs" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 
   <script>
     const videos = [
@@ -20,18 +23,11 @@
     let current = 0;
     const player = document.getElementById("videoPlayer");
 
-    function playVideo(index) {
-      player.src = videos[index];
-      player.load();
-      player.play();
-    }
-
     player.addEventListener("ended", () => {
       current = (current + 1) % videos.length;
-      playVideo(current);
+      player.setAttribute("src", videos[current]);
+      player.play();
     });
-
-    playVideo(current);
   </script>
 </body>
 </html>
