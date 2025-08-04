@@ -1,10 +1,10 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>Digital Signage Loop</title>
   <style>
-    body { margin: 0; background-color: black; }
+    body { margin: 0; background: black; }
     video { width: 100vw; height: 100vh; object-fit: cover; }
   </style>
 </head>
@@ -13,25 +13,22 @@
 
   <script>
     const videos = [
-      "https://dl.dropboxusercontent.com/scl/fi/q01fly7vefak13uarypty/InStoreScreens-Fashion-Jan2024.mp4?rlkey=s9g9lm2n5v56azvl2fzjmjlvs",
-      "https://dl.dropboxusercontent.com/scl/fi/dbeto8at3x00x7c2m4tml/InStoreScreens-Tierra-Jan2024.mp4?rlkey=0hw269epnj54hhv3cua2e9vv9",
-      "https://dl.dropboxusercontent.com/scl/fi/e71qbagbvhe15zapxck89/Diamond_Presentation.mp4?rlkey=0mjbsn0jw7o67ym6fkija1ajr"
+      "https://dl.dropboxusercontent.com/scl/fi/q01fly7vefak13uarypty/InStoreScreens-Fashion-Jan2024.mp4?rlkey=s9g9lm2n5v56azvl2fzjmjlvs&raw=1",
+      "https://dl.dropboxusercontent.com/scl/fi/dbeto8at3x00x7c2m4tml/InStoreScreens-Tierra-Jan2024.mp4?rlkey=0hw269epnj54hhv3cua2e9vv9&raw=1",
+      "https://dl.dropboxusercontent.com/scl/fi/e71qbagbvhe15zapxck89/Diamond_Presentation.mp4?rlkey=0mjbsn0jw7o67ym6fkija1ajr&raw=1"
     ];
 
     let current = 0;
-    const player = document.getElementById("videoPlayer");
+    const player = document.getElementById('videoPlayer');
 
-    function playVideo(index) {
-      player.src = videos[index];
-      player.play();
-    }
+    player.src = videos[current];
+    player.play();
 
-    player.addEventListener("ended", () => {
+    player.addEventListener('ended', () => {
       current = (current + 1) % videos.length;
-      playVideo(current);
+      player.src = videos[current];
+      player.play();
     });
-
-    playVideo(current);
   </script>
 </body>
 </html>
