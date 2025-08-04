@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <title>Digital Signage</title>
   <style>
-    body { margin: 0; background-color: black; }
-    video { width: 100vw; height: 100vh; object-fit: cover; }
+    body { margin: 0; background-color: black; overflow: hidden; }
+    iframe { width: 100vw; height: 100vh; border: none; }
   </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline>
-    <source src="https://drive.google.com/uc?export=download&id=1Evd8rpSjUS2zhXMo1fsC_SSyAIJGRpPN" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
+  <iframe
+    src="https://www.youtube.com/embed/OMregUP3RnY?autoplay=1&mute=1&controls=0&loop=1&playlist=OMregUP3RnY"
+    allow="autoplay"
+    allowfullscreen
+  ></iframe>
 </body>
 </html>
