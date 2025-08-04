@@ -9,9 +9,29 @@
   </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline>
-    <source src="https://dl.dropboxusercontent.com/scl/fi/q01fly7vefak13uarypty/InStoreScreens-Fashion-Jan2024.mp4?rlkey=s9g9lm2n5v56azvl2fzjmjlvs" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
+  <video id="videoPlayer" autoplay muted playsinline></video>
+
+  <script>
+    const videos = [
+      "https://dl.dropboxusercontent.com/scl/fi/q01fly7vefak13uarypty/InStoreScreens-Fashion-Jan2024.mp4?rlkey=s9g9lm2n5v56azvl2fzjmjlvs",
+      "https://dl.dropboxusercontent.com/scl/fi/dbeto8at3x00x7c2m4tml/InStoreScreens-Tierra-Jan2024.mp4?rlkey=0hw269epnj54hhv3cua2e9vv9"
+    ];
+
+    let current = 0;
+    const player = document.getElementById("videoPlayer");
+
+    function playVideo(index) {
+      player.src = videos[index];
+      player.load();
+      player.play();
+    }
+
+    player.addEventListener("ended", () => {
+      current = (current + 1) % videos.length;
+      playVideo(current);
+    });
+
+    playVideo(current);
+  </script>
 </body>
 </html>
