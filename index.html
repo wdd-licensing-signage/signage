@@ -4,31 +4,14 @@
   <meta charset="UTF-8">
   <title>Digital Signage Loop</title>
   <style>
-    body { margin: 0; background: black; }
+    body { margin: 0; background-color: black; }
     video { width: 100vw; height: 100vh; object-fit: cover; }
   </style>
 </head>
 <body>
-  <video id="videoPlayer" autoplay muted playsinline></video>
-
-  <script>
-    const videos = [
-      "https://dl.dropboxusercontent.com/scl/fi/q01fly7vefak13uarypty/InStoreScreens-Fashion-Jan2024.mp4?rlkey=s9g9lm2n5v56azvl2fzjmjlvs&raw=1",
-      "https://dl.dropboxusercontent.com/scl/fi/dbeto8at3x00x7c2m4tml/InStoreScreens-Tierra-Jan2024.mp4?rlkey=0hw269epnj54hhv3cua2e9vv9&raw=1",
-      "https://dl.dropboxusercontent.com/scl/fi/e71qbagbvhe15zapxck89/Diamond_Presentation.mp4?rlkey=0mjbsn0jw7o67ym6fkija1ajr&raw=1"
-    ];
-
-    let current = 0;
-    const player = document.getElementById('videoPlayer');
-
-    player.src = videos[current];
-    player.play();
-
-    player.addEventListener('ended', () => {
-      current = (current + 1) % videos.length;
-      player.src = videos[current];
-      player.play();
-    });
-  </script>
+  <video autoplay muted loop playsinline>
+    <source src="https://dl.dropboxusercontent.com/scl/fi/2pezf7m5qcz4m6rx52vol/Combined_Videos.mp4?rlkey=1sjri1s67s5vuat4881leba0h" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 </body>
 </html>
