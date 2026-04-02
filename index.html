@@ -28,12 +28,9 @@
   </iframe>
 
   <script>
-    function reloadFrame() {
-      const frame = document.getElementById('ytFrame');
-      frame.src = frame.src;
-    }
-
-    setInterval(reloadFrame, 60 * 60 * 1000);
+    setInterval(() => {
+      location.reload();
+    }, 60 * 60 * 1000);
   </script>
 </body>
 </html>
