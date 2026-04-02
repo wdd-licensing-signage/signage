@@ -3,12 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Digital Signage</title>
-  <meta http-equiv="refresh" content="0; url=https://www.youtube.com/embed/ie6ybmYMPc0?autoplay=1&mute=1&controls=0&loop=1&playlist=ie6ybmYMPc0">
   <style>
-    body { background-color: black; margin: 0; }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+
+    iframe {
+      border: 0;
+      width: 100vw;
+      height: 100vh;
+    }
   </style>
 </head>
 <body>
+  <iframe
+    id="ytFrame"
+    src="https://www.youtube.com/embed/ie6ybmYMPc0?autoplay=1&mute=1&controls=0&loop=1&playlist=ie6ybmYMPc0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    function reloadFrame() {
+      const frame = document.getElementById('ytFrame');
+      frame.src = frame.src;
+    }
+
+    setInterval(reloadFrame, 60 * 60 * 1000);
+  </script>
 </body>
 </html>
-
